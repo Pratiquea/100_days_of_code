@@ -21,23 +21,29 @@ class Solution
         if(root == NULL)
         {
             std::cout<<"returned nothing"<<std::endl;
-            return {};
+            return std::vector<int>();
         }
         std::vector<int> TraversedList;
-        stack<TreeNode *> treeStack;
+        std::stack<TreeNode *> treeStack;
         treeStack.push(root);
 
-        While(!treeStack.empty())
+        while(!treeStack.empty())
         {
-            
+            TreeNode *temp = treeStack.top();
+            TraversedList.push_back(temp->val);
+            // std::cout<<"val = "<<temp->val<<std::endl;
+            treeStack.pop();
+            if(temp->right != NULL)
+            {
+                treeStack.push(temp->right);
+            }
+
+            if(temp->left != NULL)
+            {
+                treeStack.push(temp->left);
+            }
         }
 
-        TraversedList.push_back(root->val);
-        std::cout<< root->val <<std::endl;
-
-        TraversedList = preorderTraversal(root->left);
-        TraversedList = preorderTraversal(root->right);
-        
         return TraversedList;
     }
 };
