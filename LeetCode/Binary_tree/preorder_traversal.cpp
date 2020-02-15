@@ -59,7 +59,7 @@ int main()
     Solution s;
     std::vector<int> ans;
     ans = s.preorderTraversal(root);
-    std::cout<<" got ans"<<std::endl;
+    // std::cout<<" got ans"<<std::endl;
 
     for (auto i: ans)
     {
