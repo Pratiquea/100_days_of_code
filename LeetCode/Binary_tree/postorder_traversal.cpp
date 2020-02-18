@@ -23,10 +23,22 @@ class Solution{
         TreeNode *curr = root;
 
         while(curr != NULL || !stk.empty()){
-            while(curr != NULL){
+            while(curr->left != NULL){
                 stk.push(curr);
                 curr = curr->left;
             }
+            curr = stk.top();
+            result.push_back(curr->left->val);
+            if(curr->right != NULL)
+            {
+                curr = curr->right;
+            }
+            curr->right;
+
+            stk.push(curr->right);
+            curr = stk.top();
+            stk.pop();
+            curr = curr->right;
         }
 
 
