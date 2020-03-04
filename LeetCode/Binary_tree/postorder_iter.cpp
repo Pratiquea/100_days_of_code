@@ -21,7 +21,7 @@ public:
         {
             root = stk.top();
             ans.push_back(root->val);
-            print(root->val," inside");
+            // print(root->val," inside");
             stk.pop();
             if(root->left)
             {
@@ -33,10 +33,7 @@ public:
             }
         }
         std::reverse(ans.begin(),ans.end());
-        for(auto i:ans)
-        {
-            print(i,"ans");
-        }
+        
         return ans;
     }
     template<typename T, typename T2>
