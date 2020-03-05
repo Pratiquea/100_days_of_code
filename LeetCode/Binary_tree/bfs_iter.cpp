@@ -29,7 +29,10 @@ class Solution
             root = first.first;
             level = first.second;
             q.pop();
-                        
+
+            if(!root)
+            {return ans;}
+
             if(ans.size()<level+1)
             {
                 std::vector<int> level_element;
